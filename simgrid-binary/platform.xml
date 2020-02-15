@@ -1,0 +1,33 @@
+<?xml version='1.0'?>
+<!DOCTYPE platform SYSTEM "https://simgrid.org/simgrid.dtd">
+<platform version="4.1">
+  <zone id="siteA" routing="Full">
+    <host id="Tremblay" speed="8.095Gf" core="4"/>
+    <host id="Ruby" speed="8.095Gf" core="4"/>
+    <host id="Perl" speed="8.095Gf" core="2"/>
+    <host id="Python" speed="8.095Gf" core="32"/>
+
+    <link id="link1" bandwidth="125MBps" latency="100us" />
+
+    <route src="Tremblay" dst="Ruby">
+      <link_ctn id="link1"/>
+    </route>
+    <route src="Tremblay" dst="Perl">
+      <link_ctn id="link1"/>
+    </route>
+    <route src="Tremblay" dst="Python">
+      <link_ctn id="link1"/>
+    </route>
+
+    <route src="Ruby" dst="Perl">
+      <link_ctn id="link1"/>
+    </route>
+    <route src="Ruby" dst="Python">
+      <link_ctn id="link1"/>
+    </route>
+    
+     <route src="Perl" dst="Python">
+      <link_ctn id="link1"/>
+    </route>
+  </zone>
+</platform>
